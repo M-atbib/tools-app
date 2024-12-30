@@ -78,126 +78,35 @@
   }
 </script>
 
-<div class="container">
-  <h1>JavaScript Beautifier</h1>
+<div class="max-w-7xl mx-auto p-4">
+  <h1 class="text-center text-gray-800 mb-8 text-2xl font-bold">JavaScript Beautifier</h1>
 
-  <div class="input-section">
+  <div class="mb-8">
     <textarea
       bind:value={inputCode}
       placeholder="Paste your minified JavaScript code here..."
       rows="10"
+      class="w-full p-4 border border-gray-300 rounded-md font-mono text-sm resize-y mb-4"
     ></textarea>
 
-    <div class="button-group">
-      <button on:click={clearInput} class="clear">Clear</button>
-      <button on:click={beautifyCode} class="beautify">Beautify</button>
+    <div class="flex justify-center gap-4 md:flex-row flex-col">
+      <button on:click={clearInput} class="bg-red-600 text-white font-bold py-3 px-6 rounded hover:opacity-90 transition-opacity">Clear</button>
+      <button on:click={beautifyCode} class="bg-blue-600 text-white font-bold py-3 px-6 rounded hover:opacity-90 transition-opacity">Beautify</button>
     </div>
   </div>
 
-  <div class="output-section">
+  <div class="mb-8">
     <textarea
       value={outputCode}
       placeholder="Beautified code will appear here..."
       rows="10"
       readonly
+      class="w-full p-4 border border-gray-300 rounded-md font-mono text-sm resize-y mb-4"
     ></textarea>
 
-    <div class="button-group">
-      <button on:click={copyToClipboard} class="copy">Copy to Clipboard</button>
-      <button on:click={downloadCode} class="download">Download</button>
+    <div class="flex justify-center gap-4 md:flex-row flex-col">
+      <button on:click={copyToClipboard} class="bg-green-600 text-white font-bold py-3 px-6 rounded hover:opacity-90 transition-opacity">Copy to Clipboard</button>
+      <button on:click={downloadCode} class="bg-gray-600 text-white font-bold py-3 px-6 rounded hover:opacity-90 transition-opacity">Download</button>
     </div>
   </div>
 </div>
-
-<style>
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 2rem;
-  }
-
-  .input-section,
-  .output-section {
-    margin-bottom: 2rem;
-  }
-
-  textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 14px;
-    resize: vertical;
-    margin-bottom: 1rem;
-  }
-
-  .button-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  button {
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: opacity 0.2s;
-  }
-
-  button:hover {
-    opacity: 0.9;
-  }
-
-  .clear {
-    background-color: #dc3545;
-    color: white;
-  }
-
-  .beautify {
-    background-color: #0d6efd;
-    color: white;
-  }
-
-  .copy {
-    background-color: #198754;
-    color: white;
-  }
-
-  .download {
-    background-color: #6c757d;
-    color: white;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .container {
-      padding: 0.5rem;
-    }
-
-    textarea {
-      padding: 0.75rem;
-    }
-
-    button {
-      padding: 0.5rem 1rem;
-      font-size: 14px;
-    }
-
-    .button-group {
-      flex-direction: column;
-    }
-
-    button {
-      width: 100%;
-    }
-  }
-</style>
